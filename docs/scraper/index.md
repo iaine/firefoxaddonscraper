@@ -26,7 +26,7 @@ This option is included with the various calls.
 
 Searches can be run using keywords in the interface. 
 ```python
-search_term = "banana"
+search_term = "privacy"
 addons = scraper.find_software_by_search(search_term, language)
 print(addons)
 addondets = scraper.get_links_details(addons)
