@@ -256,12 +256,6 @@ class FFScraper():
         for l in linksarray:
             details.append(self.get_link_details(l))
         return details
-
-    def write_file(self, data, filename):
-        ''' Write to CSV '''
-        df = pd.DataFrame(data)
-
-        df.to_csv(filename, index=False)
     
 class ScraperException(Exception):
     pass
