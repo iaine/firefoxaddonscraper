@@ -5,8 +5,10 @@
 Please use
 
 ```bash
-pip install git
+pip install git@github.com:iaine/firefoxaddonscraper.git
 ```
+
+There is a hope to update this method in due course
 
 ### Methods
 
