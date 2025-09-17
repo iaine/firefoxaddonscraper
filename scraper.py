@@ -3,7 +3,7 @@
 
    Does history, search, category, & add-on version history
 '''
-import re
+
 import ssl 
 from urllib.request import urlopen
 import json
