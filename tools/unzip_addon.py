@@ -8,8 +8,6 @@ import json
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-xpi_link = "https://addons.mozilla.org/firefox/downloads/file/4532473/adaptive_tab_bar_colour-3.0.xpi"
-
 class Extract():
     '''
        Class functions to extract the files from the XPI archive. 
