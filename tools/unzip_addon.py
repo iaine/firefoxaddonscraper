@@ -10,18 +10,22 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 xpi_link = "https://addons.mozilla.org/firefox/downloads/file/4532473/adaptive_tab_bar_colour-3.0.xpi"
 
-def download_link(xpi_link, dir = "."):
+class Extract():
     '''
-        Download and unzip a file
-        :param xpi_link - the url to the XPI file. 
-        :param dir - the directory tp extract it all into
+       Class functions to extract the files from the XPI archive. 
     '''
-    xpi_filename = xpi_link.split('/')
+    def download_link(xpi_link, dir = "."):
+        '''
+            Download and unzip a file
+            :param xpi_link - the url to the XPI file. 
+            :param dir - the directory tp extract it all into
+        '''
+        xpi_filename = xpi_link.split('/')
 
-    urlretrieve(xpi_link, xpi_filename[len(xpi_filename)-1])
+        urlretrieve(xpi_link, xpi_filename[len(xpi_filename)-1])
 
-    with zipfile.ZipFile(xpi_filename[len(xpi_filename)-1], 'r') as zip_ref:
-        zip_ref.extractall(dir)
+        with zipfile.ZipFile(xpi_filename[len(xpi_filename)-1], 'r') as zip_ref:
+            zip_ref.extractall(dir)
 
 class Manifest():
     """
