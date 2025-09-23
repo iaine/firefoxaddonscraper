@@ -1,5 +1,5 @@
 """
-   Script to unzip FFAdd-On
+   Classes to unzip FFAdd-On and access the manifest file
 """
 from urllib.request import urlretrieve
 import zipfile
