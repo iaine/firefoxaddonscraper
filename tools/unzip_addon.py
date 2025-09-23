@@ -16,7 +16,7 @@ class Extract():
         '''
             Download and unzip a file
             :param xpi_link - the url to the XPI file. 
-            :param dir - the directory tp extract it all into
+            :param dir - the directory to extract it all into
         '''
         xpi_filename = xpi_link.split('/')
 
@@ -50,31 +50,43 @@ class Manifest():
             self.data = json.load(f)
     
     def permissions(self):
-
+        '''
+            Read the permissions field from read in file
+        '''
         if "permissions" in self.data:
             return self.data['permissions']
         
     def name(self):
-
+        '''
+            Read the name field from read in file
+        '''
         if "name" in self.data:
             return self.data['name']
         
     def addon_version(self):
-
+        '''
+            Read the Add-On version field from read in file
+        '''
         if "version" in self.data:
             return self.data['version']
 
     def manifest_version(self):
-
+        '''
+            Read the manifest version field from read in file
+        '''
         if "manifest_version" in self.data:
             return self.data['manifest_version']  
              
     def default_locale(self):
-
+        '''
+            Read the default locale field from read in file
+        '''
         if "default_locale" in self.data:
             return self.data['default_locale']
         
     def browser_specific_settings(self):
-
+        '''
+            Read the browser specific settings field from read in file
+        '''
         if "browser_specific_settings" in self.data:
             return json.dumps(self.data['browser_specific_settings'])
