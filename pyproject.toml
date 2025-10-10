@@ -14,7 +14,7 @@ dependencies = [
 authors = [
   {name = "Iain Emsley", email = "iain.emsley@warwick.ac.uk"},
 ]
-description = "Lovely Spam! Wonderful Spam!"
+description = "Scraper for the Firefox Addon Market places"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
