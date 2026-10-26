@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 
-ssl._create_default_https_context = ssl._create_unverified_context
+#ssl._create_default_https_context = ssl._create_unverified_context
 
 class FFScraper():
 
@@ -48,10 +48,16 @@ class FFScraper():
             app['licenseurl'] = result['current_version']['license']['url']
             app['releasenotes'] = result['current_version']['release_notes']
             app['privacy'] = result['has_privacy_policy']
-            keys = list(result['description'].keys())
-            app['description'] = result['description'][keys[0]]
-            keys = list(result['homepage']['url'].keys())
-            app['home'] = result['homepage']['url'][keys[0]]
+            
+            app['description'] = ""
+            if result['description'] is not None:
+                keys = list(result['description'].keys())
+                app['description'] = result['description'][keys[0]]
+            app['home'] = ""
+            keys = []
+            if result['homepage'] is not None and 'url' in result['homepage']:
+                keys = list(result['homepage']['url'].keys())
+                app['home'] = result['homepage']['url'][keys[0]]
             keys = list(result['name'].keys())
             app['name'] = result['name'][keys[0]]
             app['last'] = result['last_updated']
